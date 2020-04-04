@@ -27,7 +27,9 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="./"><?php lang("Home");?></a></li>
+            <?php if($_SESSION["POSITION"] != 2){?>
             <li class="breadcrumb-item"><a href="?page=repair"><?php lang("Repair List");?></a></li>
+            <?php } ?>
             <li class="breadcrumb-item active"><?php lang("Repair");?></li>
           </ol>
         </div><!-- /.col -->
