@@ -142,8 +142,8 @@ if(!empty($repair)){
                         <td><?php echo $repair["created_at"];?></td>
                         <td><?php echo $inventory_txt[$repair["inventory_id"]];?></td>
                         <td><?php echo $repair["description"];?></td>
-                        <td><?php echo $users_txt[$repair["user_id"]];?></td>
-                        <td><?php echo $technician[$repair["technician"]];?></td>
+                        <td><?php echo isset($users_txt[$repair["user_id"]]) ? $users_txt[$repair["user_id"]] : "-";?></td>
+                        <td><?php echo isset($technician[$repair["technician"]]) ? $technician[$repair["technician"]] : "-";?></td>
                         <td><span class="badge badge-pill" style="background: <?php echo $bg_color[$arr_repair_detail_status[$repair["id"]]];?>; color: <?php echo $text_color[$arr_repair_detail_status[$repair["id"]]];?>;"><?php echo $status;?></span></td>
                         <td>
                           <div class="dropdown">
