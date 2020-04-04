@@ -277,7 +277,12 @@ if(!empty($repair)){
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header">
+            
               <div class="card-title"><?php lang("List Repair");?></div>
+              <div class="float-right">
+                <a href="?page=repair/add" class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i> <?php lang("Repair");?></a>
+              </div>
+              
             </div>
             <div class="card-body">
               <table class="table">
@@ -308,7 +313,7 @@ if(!empty($repair)){
                         <td><?php echo $repair["created_at"];?></td>
                         <td><?php echo $inventory_txt[$repair["inventory_id"]];?></td>
                         <td><?php echo $problem_txt[$repair["problem"]];?></td>
-                        <td><?php echo $technician[$repair["technician"]];?></td>
+                        <td><?php echo isset($technician[$repair["technician"]]) ? $technician[$repair["technician"]] : "-";?></td>
                         <td><span class="badge badge-pill" style="background: <?php echo $bg_color[$arr_repair_detail_status[$repair["id"]]];?>; color: <?php echo $text_color[$arr_repair_detail_status[$repair["id"]]];?>;"><?php echo $status;?></span></td>
                         <td>
                           <button class="btn btn-primary btn-sm" title="View" data-toggle="modal" data-target="#Modal<?php echo $repair["id"];?>"><i class="fas fa-search"></i></button>
@@ -342,7 +347,7 @@ if(!empty($repair)){
                               </div>
                               <div class="row">
                                 <div class="col-md-4"><p><?php lang("Teahician");?></p></div>
-                                <div class="col-md-8"><p><?php echo $technician[$repair["technician"]];?></p></div>
+                                <div class="col-md-8"><p><?php echo isset($technician[$repair["technician"]]) ? $technician[$repair["technician"]] : "-";?></p></div>
                               </div>
                               <div class="row">
                                 <div class="col-md-4"><p><?php lang("Status");?></p></div>

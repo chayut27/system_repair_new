@@ -15,8 +15,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "create_repair"){
     );
 
     $required = array(
-        "problem" => "Problem",   
-        "technician" => "technician",   
+        "problem" => "Problem",     
         "description" => "Description",   
         "inventory" => "Inventory",
         "user_id" => "User ID",
@@ -25,7 +24,12 @@ if(isset($_GET["action"]) && $_GET["action"] == "create_repair"){
     if(validate($req, $required) === FALSE){
         $_SESSION["STATUS"] = FALSE;
         $_SESSION["MSG"] = lang("Invalid Data.", false);
-        header("location:../../index.php?page=repair");
+        if($_SESSION["POSITION"] == "2"){
+            header("location:../../index.php?page=dashboard");
+        }else{
+            header("location:../../index.php?page=repair");
+        }
+       
         exit();
     }
 

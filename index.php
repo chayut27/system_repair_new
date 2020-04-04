@@ -45,7 +45,7 @@ if($_SESSION["POSITION"] != 1){
 }
 
 if($_SESSION["POSITION"] == 2){
-  if($page == "repair" || $page == "repair/add" || $page == "repair/edit"){
+  if($page == "repair" || $page == "repair/edit"){
     echo "404 Page not found !";
     die();
   }
